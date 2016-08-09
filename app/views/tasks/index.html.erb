@@ -1,0 +1,11 @@
+<h1>Tasks#index</h1>
+<li><%= link_to 'Create New', new_task_path %></li>
+<% @tasks.each do |task| %>
+  <ul>
+    <li><%= link_to 'Edit', edit_task_path(task) %></li>
+    <li><%= link_to 'Delete', task_path(task), method: :delete %></li>
+    <li><h2><%= task.content %></h2></li>
+    <li><p><%= task.done ? 'DONE' : 'TO DO' %></p></li>
+    <br>
+  </ul>
+<% end %>
